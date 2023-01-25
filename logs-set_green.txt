@@ -1,0 +1,191 @@
+root@1156865547ec:/data# goal app create --creator $ONE --approval-prog greenvibes_approval.teal --clear-prog greenvibes_clear.teal --global-ints 3 --global-byteslices 61 --local-ints 0 --local-byteslices 0 --app-arg "string:001" --app-arg "string:FirstProduct" --app-arg "string:1" --app-arg "string:dfce08570276c7fa8220b29d5795319e747e687de9d03b1cd8ee4b5de0666dba" --app-arg "addr:$ONE"
+Attempting to create app (approval size 560, hash GWFE3RGXYOMSFLE55RUSC2IL3CJH4T7WPIWGVYMP4NEUT2ZCQA3A; clear size 4, hash BJATCHES5YJZJ7JITYMVLSSIQAVAWBQRVGPQUDT5AZ2QSLDSXWWA)
+Issued transaction from account QHEHC6IZNPHCJ4GJLJ7BF5ZNCK4OX53G7A6MCK23OJPNFN2I4FTRGGJVSM, txid KMHFYU6HDYUA2WP6DXCWZYRGMYMADJGJXIA4RAVDHXRH4NXJ7MGA (fee 1000)
+Transaction KMHFYU6HDYUA2WP6DXCWZYRGMYMADJGJXIA4RAVDHXRH4NXJ7MGA committed in round 28
+Created app with app index 29
+root@1156865547ec:/data# goal app call --app-id 29 -f $ONE --app-arg "string:transfer_ownership" --app-arg "addr:$TWO"
+Issued transaction from account QHEHC6IZNPHCJ4GJLJ7BF5ZNCK4OX53G7A6MCK23OJPNFN2I4FTRGGJVSM, txid B5YPQ4CM6HMVKG4U6VP3B7UGV7FBTGPWRF7NCO6LJ5KL63MBCFYQ (fee 1000)
+Transaction B5YPQ4CM6HMVKG4U6VP3B7UGV7FBTGPWRF7NCO6LJ5KL63MBCFYQ committed in round 29
+root@1156865547ec:/data# goal app call --app-id 29 -f $TWO --app-arg "string:append" --app-arg "string:2" --app-arg "string:d170236c60e4b68b5bb36cb3998a5183cb06edd6064af3decff9e926e11834e6"                                                   Issued transaction from account VCPBVP6RMSKJBCV5OUOVVN5CQX5CCXCVBLHMZEMRSGIEEMDW66UWDGLQWU, txid 3GCHKK2HI7VIDM3I6V3USOFC26SGKSGE4HZ7JOR2PZQYEXH4AFKQ (fee 1000)
+Transaction 3GCHKK2HI7VIDM3I6V3USOFC26SGKSGE4HZ7JOR2PZQYEXH4AFKQ committed in round 30
+root@1156865547ec:/data# goal app info --app-id 29
+Application ID:        29
+Application account:   6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64
+Creator:               QHEHC6IZNPHCJ4GJLJ7BF5ZNCK4OX53G7A6MCK23OJPNFN2I4FTRGGJVSM
+Approval hash:         GWFE3RGXYOMSFLE55RUSC2IL3CJH4T7WPIWGVYMP4NEUT2ZCQA3O2BYKBI
+Clear hash:            BJATCHES5YJZJ7JITYMVLSSIQAVAWBQRVGPQUDT5AZ2QSLDSXWWM46THOY
+Max global byteslices: 61
+Max global integers:   3
+Max local byteslices:  0
+Max local integers:    0
+root@1156865547ec:/data# goal clerk send --amount 20000 -f $TWO -t 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64
+Couldn't broadcast tx with algod: HTTP 400 Bad Request: TransactionPool.Remember: transaction R4T4UWOHV74VU55QKUKBLCW3HRZBVUGRTWIC3Z22F7MOYLFCOYGQ: account 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64 balance 20000 below min 100000 (0 assets)
+root@1156865547ec:/data# goal clerk send --amount 200000 -f $TWO -t 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64
+Sent 200000 MicroAlgos from account VCPBVP6RMSKJBCV5OUOVVN5CQX5CCXCVBLHMZEMRSGIEEMDW66UWDGLQWU to address 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64, transaction ID: T4ZTM5NXTIYXKOHWNYDHQA2XNJ2ERHKM3TYIUR6ZAZCOMBSL2J3A. Fee set to 1000
+Transaction T4ZTM5NXTIYXKOHWNYDHQA2XNJ2ERHKM3TYIUR6ZAZCOMBSL2J3A committed in round 31
+root@1156865547ec:/data# goal app call --app-id 29 -f $TWO --app-arg "string:set_retailer" --app-arg "addr:$THREE"
+Issued transaction from account VCPBVP6RMSKJBCV5OUOVVN5CQX5CCXCVBLHMZEMRSGIEEMDW66UWDGLQWU, txid U7RFIUPCXPWLCZVNHPNWYQ6PG57DXBYOOKLVAP4WB5VOQEXC5CQQ (fee 1000)
+Transaction U7RFIUPCXPWLCZVNHPNWYQ6PG57DXBYOOKLVAP4WB5VOQEXC5CQQ committed in round 32
+root@1156865547ec:/data# goal app call --app-id 29 -f $TWO --app-arg "string:transfer_ownership" --app-arg "addr:$THREE"Issued transaction from account VCPBVP6RMSKJBCV5OUOVVN5CQX5CCXCVBLHMZEMRSGIEEMDW66UWDGLQWU, txid XRQYR2I3O2KFBDXSVXXK7OJES7TFV7DEMH4X5CM3MCF6XVB2JFVA (fee 1000)
+Transaction XRQYR2I3O2KFBDXSVXXK7OJES7TFV7DEMH4X5CM3MCF6XVB2JFVA committed in round 33
+root@1156865547ec:/data# goal app call --app-id 29 -f $THREE --app-arg "string:append" --app-arg "string:3" --app-arg "string:0d98c812ea66d75d34bc435709e967c2c879c615d1c8c3d816bee5f879c3b439" --foreign-asset 19                              Couldn't broadcast tx with algod: HTTP 400 Bad Request: TransactionPool.Remember: transaction NWSEONI6EZEJVLVSPZEVEWX6J2R5IQFMXY32JHCMJOWCUC42OFVQ: account 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64 balance 199000 below min 200000 (1 assets)
+root@1156865547ec:/data# goal clerk send --amount 1000 -f $THREE -t 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64                                                                                                                  Sent 1000 MicroAlgos from account 4BLR6TNE77W4XTA2PU6XG2MSG4BHXNEEGIXUFZM4LPVUHLXOGJ5Z4UVGW4 to address 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64, transaction ID: EBWHRCI7TGYC2ZV53YDWALZCTST7AVCTCZ44NRUKCMQRU2GVEBVA. Fee set to 1000
+Transaction EBWHRCI7TGYC2ZV53YDWALZCTST7AVCTCZ44NRUKCMQRU2GVEBVA committed in round 34
+root@1156865547ec:/data# goal app call --app-id 29 -f $THREE --app-arg "string:append" --app-arg "string:3" --app-arg "string:0d98c812ea66d75d34bc435709e967c2c879c615d1c8c3d816bee5f879c3b439" --foreign-asset 19
+Issued transaction from account 4BLR6TNE77W4XTA2PU6XG2MSG4BHXNEEGIXUFZM4LPVUHLXOGJ5Z4UVGW4, txid ERG6CUKFJ4LFFZZ276NAKRHQHKNJPXX2KODNTUT3I4AARC3K3TWQ (fee 1000)
+Transaction ERG6CUKFJ4LFFZZ276NAKRHQHKNJPXX2KODNTUT3I4AARC3K3TWQ committed in round 35
+root@1156865547ec:/data# goal account balance -a 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64
+200000 microAlgos
+root@1156865547ec:/data# goal account info -a 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64
+Created Assets:
+        <none>
+Held Assets:
+        ID 19, GreenCoin, balance 0 GC
+Created Apps:
+        <none>
+Opted In Apps:
+        <none>
+Minimum Balance:        200000 microAlgos
+root@1156865547ec:/data# goal app call --app-id 29 -f $ONE --app-arg "string:set_green" --app-arg "int:19" -o unsigned-tx1.tx                                                                                                                   root@1156865547ec:/data# goal asset send --assetid 19 --amount 19 -f $ONE -t 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64 -o unsigned-tx2.tx
+root@1156865547ec:/data# goal clerk send --amount 1900000 -f $ONE -t 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64 -o unsigned-tx3.tx
+root@1156865547ec:/data# cat unsigned-tx1.tx unsigned-tx2.tx unsigned-tx3.tx > combinedtxns.tx
+root@1156865547ec:/data# goal clerk group -i combinedtxns.tx -o groupedtxns.tx
+root@1156865547ec:/data# goal clerk sign -i groupedtxns.tx -o signed-grouptxns.tx -S $ONE
+root@1156865547ec:/data# goal clerk rawsend -f signed-grouptxns.tx
+Raw transaction ID HLKBQY6FWNTYWWBCNU7JADBYFPWN5XVCM2TCAD7P6GSPPZCEHBRA issued
+Raw transaction ID WCATJYUYJVXKWNWGE2XAPZVBX4HMFNKKZYZHKEPAQVUMGUPSXL5Q issued
+Raw transaction ID KB2LCOTPU7W52J45OJGROFQBMRNZ5TKQ32VUH5TPGTFNESKPA4JA issued
+Transaction KB2LCOTPU7W52J45OJGROFQBMRNZ5TKQ32VUH5TPGTFNESKPA4JA committed in round 36
+Transaction HLKBQY6FWNTYWWBCNU7JADBYFPWN5XVCM2TCAD7P6GSPPZCEHBRA committed in round 36
+Transaction WCATJYUYJVXKWNWGE2XAPZVBX4HMFNKKZYZHKEPAQVUMGUPSXL5Q committed in round 36
+root@1156865547ec:/data# goal account info -a 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64
+Created Assets:
+        <none>
+Held Assets:
+        ID 19, GreenCoin, balance 19 GC
+Created Apps:
+        <none>
+Opted In Apps:
+        <none>
+Minimum Balance:        200000 microAlgos
+root@1156865547ec:/data# goal app read --app-id 29 --global
+{
+  "1": {
+    "tb": "dfce08570276c7fa8220b29d5795319e747e687de9d03b1cd8ee4b5de0666dba",
+    "tt": 1
+  },
+  "2": {
+    "tb": "d170236c60e4b68b5bb36cb3998a5183cb06edd6064af3decff9e926e11834e6",
+    "tt": 1
+  },
+  "3": {
+    "tb": "0d98c812ea66d75d34bc435709e967c2c879c615d1c8c3d816bee5f879c3b439",
+    "tt": 1
+  },
+  "at_retailer": {
+    "tt": 2,
+    "ui": 1
+  },
+  "green": {
+    "tt": 2,
+    "ui": 19
+  },
+  "green_assessor": {
+    "tb": "\ufffd\ufffdqy\u0019k\ufffd$\ufffd\ufffdZ~\u0012\ufffd-\u0012\ufffd\ufffd\ufffdf\ufffd<\ufffd+[r^ҷH\ufffdg",
+    "tt": 1
+  },
+  "operationNo": {
+    "tt": 2,
+    "ui": 3
+  },
+  "owner": {
+    "tb": "\ufffdW\u001fM\ufffd\ufffd\ufffd\ufffd\ufffd\u001a}=si\ufffd7\u0002{\ufffd\ufffd2/B\ufffd\ufffd[\ufffdC\ufffd\ufffd2{",
+    "tt": 1
+  },
+  "productId": {
+    "tb": "001",
+    "tt": 1
+  },
+  "productName": {
+    "tb": "FirstProduct",
+    "tt": 1
+  },
+  "retailer": {
+    "tb": "\ufffdW\u001fM\ufffd\ufffd\ufffd\ufffd\ufffd\u001a}=si\ufffd7\u0002{\ufffd\ufffd2/B\ufffd\ufffd[\ufffdC\ufffd\ufffd2{",
+    "tt": 1
+  }
+root@1156865547ec:/data# goal account new
+Created new account with address UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q
+root@1156865547ec:/data# goal account info -a UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q
+Created Assets:
+        <none>
+Held Assets:
+        <none>
+Created Apps:
+        <none>
+Opted In Apps:
+        <none>
+Minimum Balance:        100000 microAlgos
+root@1156865547ec:/data# goal account balance -a UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q
+0 microAlgos
+root@1156865547ec:/data# export CONSUMER=UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q
+root@1156865547ec:/data# goal clerk send --amount 200000 -f $ONE -t $CONSUMER
+Sent 200000 MicroAlgos from account QHEHC6IZNPHCJ4GJLJ7BF5ZNCK4OX53G7A6MCK23OJPNFN2I4FTRGGJVSM to address UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q, transaction ID: 2WZKNSONHMW46RHVAN7KLXKLHC7RFO23M4PVZGMEEJ67UYRYNKGA. Fee set to 1000
+Transaction 2WZKNSONHMW46RHVAN7KLXKLHC7RFO23M4PVZGMEEJ67UYRYNKGA committed in round 37
+root@1156865547ec:/data# goal asset send --assetid 19 --amount 0 -f $CONSUMER -t $CONSUMER
+Couldn't broadcast tx with algod: HTTP 400 Bad Request: TransactionPool.Remember: transaction MSUCGPIFEO22TKFBGPR7AYSWWSVDN3E4OHGPJ6BIN6RUSJR7VH4Q: account UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q balance 199000 below min 200000 (1 assets)
+root@1156865547ec:/data# goal clerk send --amount 200000 -f $ONE -t $CONSUMER
+Sent 200000 MicroAlgos from account QHEHC6IZNPHCJ4GJLJ7BF5ZNCK4OX53G7A6MCK23OJPNFN2I4FTRGGJVSM to address UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q, transaction ID: 74DGKAPABJGI7CHLBJGP4PZBTPXGHGSIF2UH7U5FJBIBLXBH7ZHA. Fee set to 1000
+Transaction 74DGKAPABJGI7CHLBJGP4PZBTPXGHGSIF2UH7U5FJBIBLXBH7ZHA committed in round 38
+root@1156865547ec:/data# goal asset send --assetid 19 --amount 0 -f $CONSUMER -t $CONSUMER
+Issued transaction from account UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q, txid XOCH6YJYP6T3GNTTEFA2CMLAAOH475AW6UAHFKD5BC5363FTEFUA (fee 1000)
+Transaction XOCH6YJYP6T3GNTTEFA2CMLAAOH475AW6UAHFKD5BC5363FTEFUA committed in round 39
+root@1156865547ec:/data# goal app call --app-id 29 -f $THREE --app-arg "string:transfer_ownership" --app-arg "addr:$CONSUMER"
+Issued transaction from account 4BLR6TNE77W4XTA2PU6XG2MSG4BHXNEEGIXUFZM4LPVUHLXOGJ5Z4UVGW4, txid 4EMRRTTVUED4A5PQEXKCXVXVFV25KSXVK7CTYYZIY3FCKNMZUZUQ (fee 1000)
+Transaction 4EMRRTTVUED4A5PQEXKCXVXVFV25KSXVK7CTYYZIY3FCKNMZUZUQ committed in round 40
+root@1156865547ec:/data# goal app call --app-id 29 -f $CONSUMER --app-arg "string:claim"
+Couldn't broadcast tx with algod: HTTP 400 Bad Request: TransactionPool.Remember: transaction 75UQCDKQTZLMEIELSUTINB3WKM3BDDRRL5ZBB6TZQAPWS6T7YS2Q: logic eval error: invalid Assets index 0. Details: pc=553, opcodes=load 5itxn_field AssetAmounttxna Assets 0
+root@1156865547ec:/data# goal app call --app-id 29 -f $CONSUMER --app-arg "string:claim" --foreign-asset 19
+Issued transaction from account UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q, txid URFK6RSHKH4BYG2IARB535K4WU3HDR3P7O7QWPJB7SU4FCLDU4DQ (fee 1000)
+Transaction URFK6RSHKH4BYG2IARB535K4WU3HDR3P7O7QWPJB7SU4FCLDU4DQ committed in round 41
+root@1156865547ec:/data# goal account balance -a UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q
+398000 microAlgos
+root@1156865547ec:/data# goal account info -a UDIILN3QKGEN7KO23MCEECX3774VZ4RG7P7A4K7MNZHXZGK4I76SNATE3Q
+Created Assets:
+        <none>
+Held Assets:
+        ID 19, GreenCoin, balance 19 GC
+Created Apps:
+        <none>
+Opted In Apps:
+        <none>
+Minimum Balance:        200000 microAlgos
+root@1156865547ec:/data# goal account info -a 6WMXMKQZMTDYX2GJRKGZQJCF73US4BSXUF5YKYP73BBAJGPI2CZO3QUQ64
+Created Assets:
+        <none>
+Held Assets:
+        ID 19, GreenCoin, balance 0 GC
+Created Apps:
+        <none>
+Opted In Apps:
+        <none>
+Minimum Balance:        200000 microAlgos
+root@1156865547ec:/data#
+
+
+
+
+
+
+
+
+
+
+
+123659723 (app)
+MOHYX2LDYNV3VXRGLITVX7KFUTNTVDYSQSPEHN54AXW24FMD4AHWCW3OIU (app account)
+
+
+104849720 (asset)
+
+100000 (optin) fee
