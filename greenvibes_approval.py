@@ -129,7 +129,6 @@ def approval_program():
     # Gtxn[1]: transfer coins to smart contract
     # Gtxn[2]: fund sc
     # Txn.application_args[1]: LCA points (green points)
-    #TODO: check this group transactions
     set_green = Seq([
       Assert(App.globalGet(Bytes("at_retailer")) == Int(1)),
       Assert(Global.group_size() == Int(3)),
